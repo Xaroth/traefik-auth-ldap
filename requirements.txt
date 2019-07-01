@@ -1,0 +1,4 @@
+Flask==1.0.3
+Flask-Login==0.4.1
+Flask-Caching==1.7.2
+ldap3==2.6

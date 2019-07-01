@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <form class="form-signin" method="POST" action="{{ url_for('web.login', next=next_url) }}">
+      <div class="mb-4" id="logo">&times;</div>
+
+      <input type="hidden" name="csrf-token" value="{{ csrf_token() }}" />
+      <input type="hidden" name="next" value="{{ next_url }}" />
+      
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      {% if failed %}
+      <h6 class="text-danger">
+        Please try again
+      </h6>
+      {% endif %}
+      <label for="username" class="sr-only">Username</label>
+      <input type="text" id="username" name="username" class="form-control" placeholder="Username" {% if username %}value="{{ username }}"{% endif %} required="" autofocus="">
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+{% endblock body %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="form-signin">
+    <div class="mb-4" id="logo">
+        &times;
+    </div>
+    <h1>You are logged out.</h1>
+    <h4><a href="{{ url_for('web.login') }}">Log in again.</a></h4>
+</div>
+{% endblock body %}
